@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HERA — Lista de Requisitos</title>
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#1f2937;
+}
+header{
+    background:linear-gradient(135deg,#062b52,#0b6bb8);
+    color:#fff;
+    padding:60px 8%;
+}
+header .tag{
+    display:inline-block;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.25);
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:.8px;
+}
+h1{font-size:48px;margin:18px 0 10px}
+header p{font-size:18px;max-width:780px;line-height:1.6;color:#dceeff}
+
+.container{width:min(1200px,92%);margin:auto;padding:55px 0}
+.intro{
+    background:#fff;
+    border-radius:18px;
+    padding:28px 32px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    margin-top:-30px;
+    position:relative;
+}
+.intro h2{margin:0 0 10px;color:#073866}
+.intro p{margin:0;color:#64748b;line-height:1.7}
+
+.section-title{text-align:center;margin:55px 0 28px}
+.section-title h2{font-size:32px;color:#102a43;margin:8px}
+.section-title p{color:#64748b;margin:auto;max-width:700px;line-height:1.6}
+
+.legend{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-bottom:28px;
+}
+.badge{
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+.rf{background:#dbeafe;color:#0757a0}
+.rnf{background:#fce7f3;color:#a51d5d}
+.size{background:#dcfce7;color:#166534}
+.priority{background:#fee2e2;color:#b91c1c}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+.card{
+    background:#fff;
+    border-radius:16px;
+    padding:24px;
+    box-shadow:0 8px 24px rgba(15,35,60,.08);
+    border-left:6px solid #1476c9;
+    transition:.2s;
+}
+.card:hover{transform:translateY(-3px)}
+.card.rnf-card{border-left-color:#c0266d}
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-bottom:14px;
+}
+.code{
+    font-size:20px;
+    font-weight:bold;
+    color:#0b4f87;
+}
+.rnf-card .code{color:#a51d5d}
+.card h3{margin:0;font-size:19px;color:#172b4d}
+.card p{color:#64748b;line-height:1.6;font-size:14px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.meta span{
+    background:#f1f5f9;
+    color:#475569;
+    padding:6px 10px;
+    border-radius:8px;
+    font-size:12px;
+}
+.summary{
+    margin-top:55px;
+    background:#102a43;
+    color:#fff;
+    padding:35px;
+    border-radius:20px;
+}
+.summary h2{text-align:center;margin-top:0}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:20px}
+th,td{padding:14px;text-align:left;border-bottom:1px solid rgba(255,255,255,.15)}
+th{color:#9ed0ff}
+td{color:#e2edf7}
+footer{text-align:center;padding:25px;background:#071d33;color:#9fb5c9}
+
+@media(max-width:800px){
+    h1{font-size:36px}
+    .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+    <span class="tag">PROJETO HERA • LISTA DE REQUISITOS</span>
+    <h1>Requisitos do Sistema</h1>
+    <p>
+        Organização dos requisitos funcionais e não funcionais definidos
+        para o sistema HERA — Hospedagem, Estadias, Reservas e Acomodações.
+    </p>
+</header>
+
+<div class="container">
+    <div class="intro">
+        <h2>Como estruturamos os requisitos</h2>
+        <p>
+            Cada requisito foi identificado por um código e organizado no GitLab.
+            Os <strong>RFs</strong> representam as funcionalidades que o sistema deve oferecer,
+            enquanto os <strong>RNFs</strong> representam características e regras de qualidade
+            relacionadas ao funcionamento do sistema.
+        </p>
+    </div>
+
+    <div class="section-title">
+        <h2>📋 Requisitos Funcionais</h2>
+        <p>Funcionalidades principais que o sistema HERA deverá disponibilizar aos clientes e proprietários.</p>
+    </div>
+
+    <div class="legend">
+        <span class="badge rf">RF = Requisito Funcional</span>
+        <span class="badge priority">Prioridade definida no planejamento</span>
+        <span class="badge size">Tamanho estimado</span>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-top"><span class="code">RF01</span><span class="badge rf">Funcional</span></div>
+            <h3>Cadastro e manutenção de usuários</h3>
+            <p>Permite o cadastro e a manutenção dos dados de clientes e proprietários, conforme o perfil de cada usuário.</p>
+            <div class="meta"><span>US-001 a US-003</span><span>Tamanho: M</span></div>
+        </div>
+
+        <div class="card">
+            <div class="card-top"><span class="code">RF02</span><span class="badge rf">Funcional</span></div>
+            <h3>Autenticação de usuários</h3>
+            <p>Permite a autenticação de clientes e proprietários e restringe o acesso às funcionalidades conforme o perfil.</p>
+            <div class="meta"><span>US-004 e US-005</span><span>Tamanho: M</span></div>
+        </div>
+
+        <div class="card">
+            <div class="card-top"><span class="code">RF03</span><span class="badge rf">Funcional</span></div>
+            <h3>Cadastro e manutenção de acomodações</h3>
+            <p>Permite ao proprietário cadastrar e administrar acomodações, características, regras, fotos, preços e disponibilidade.</p>
+            <div class="meta"><span>US-006 a US-010</span><span>Tamanho: G</span></div>
+        </div>
+
+        <div class="card">
+            <div class="card-top"><span class="code">RF04</span><span class="badge rf">Funcional</span></div>
+            <h3>Consulta de acomodações</h3>
+            <p>Permite pesquisar e consultar acomodações considerando período, características, preços e disponibilidade.</p>
+            <div class="meta"><span>US-011 a US-013</span><span>Tamanho: G</span></div>
+        </div>
+
+        <div class="card">
+            <div class="card-top"><span class="code">RF05</span><span class="badge rf">Funcional</span></div>
+            <h3>Solicitação de reserva</h3>
+            <p>Permite solicitar reservas para acomodações disponíveis e impede conflitos entre reservas no mesmo período.</p>
+            <div class="meta"><span>US-014 e US-015</span><span>Tamanho: G</span></div>
+        </div>
+
+        <div class="card">
+            <div class="card-top"><span class="code">RF06</span><span class="badge rf">Funcional</span></div>
+            <h3>Ciclo da reserva</h3>
+            <p>Controla o processo da reserva desde a solicitação até o encerramento da hospedagem.</p>
+            <div class="meta"><span>US-016 e US-017</span><span>Tamanho: G</span></div>
+        </div>
+
+        <div class="card">
+            <div class="card-top"><span class="code">RF07</span><span class="badge rf">Funcional</span></div>
+            <h3>Reservas do proprietário</h3>
+            <p>Permite ao proprietário consultar e acompanhar as reservas relacionadas às suas acomodações.</p>
+            <div class="meta"><span>US-018</span><span>Tamanho: M</span></div>
+        </div>
+
+        <div class="card">
+            <div class="card-top"><span class="code">RF08</span><span class="badge rf">Funcional</span></div>
+            <h3>Reservas do cliente</h3>
+            <p>Permite ao cliente consultar suas reservas e acompanhar a situação de suas hospedagens.</p>
+            <div class="meta"><span>US-019</span><span>Tamanho: M</span></div>
+        </div>
+
+        <div class="card">
+            <div class="card-top"><span class="code">RF09</span><span class="badge rf">Funcional</span></div>
+            <h3>Cancelamento de reservas</h3>
+            <p>Permite cancelar reservas conforme as regras de cancelamento definidas para o processo.</p>
+            <div class="meta"><span>US-020</span><span>Tamanho: M</span></div>
+        </div>
+
+        <div class="card">
+            <div class="card-top"><span class="code">RF10</span><span class="badge rf">Funcional</span></div>
+            <h3>Avaliações</h3>
+            <p>Permite registrar e consultar avaliações relacionadas às hospedagens e aos hóspedes.</p>
+            <div class="meta"><span>US-021 a US-023</span><span>Tamanho: G</span></div>
+        </div>
+
+    </div>
+
+    <div class="section-title">
+        <h2>🔒 Requisitos Não Funcionais</h2>
+        <p>Características importantes relacionadas à segurança, controle e qualidade do sistema.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card rnf-card">
+            <div class="card-top"><span class="code">RNF01</span><span class="badge rnf">Não Funcional</span></div>
+            <h3>Proteção dos dados pessoais</h3>
+            <p>Restringe o acesso aos dados pessoais de clientes e proprietários somente a usuários autorizados.</p>
+            <div class="meta"><span>US-024</span><span>Prioridade: Essencial</span><span>Tamanho: G</span></div>
+        </div>
+
+        <div class="card rnf-card">
+            <div class="card-top"><span class="code">RNF02</span><span class="badge rnf">Não Funcional</span></div>
+            <h3>Controle de acesso por perfil</h3>
+            <p>Controla o acesso às funcionalidades de acordo com o perfil do usuário autenticado.</p>
+            <div class="meta"><span>Relacionado à US-005</span><span>Tamanho: M</span></div>
+        </div>
+
+        <div class="card rnf-card">
+            <div class="card-top"><span class="code">RNF03</span><span class="badge rnf">Não Funcional</span></div>
+            <h3>Integridade dos dados das reservas</h3>
+            <p>Impede o registro de duas reservas conflitantes para a mesma acomodação e período.</p>
+            <div class="meta"><span>Relacionado à US-015</span><span>Tamanho: G</span></div>
+        </div>
+
+        <div class="card rnf-card">
+            <div class="card-top"><span class="code">RNF04</span><span class="badge rnf">Não Funcional</span></div>
+            <h3>Rastreabilidade das alterações</h3>
+            <p>Registra alterações relevantes, identificando a mudança realizada, o usuário responsável e a data e hora.</p>
+            <div class="meta"><span>US-025</span><span>Tamanho: G</span></div>
+        </div>
+
+    </div>
+
+    <div class="summary">
+        <h2>Resumo da estrutura do projeto</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Quantidade</th>
+                        <th>Organização</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Requisitos Funcionais</td>
+                        <td>10</td>
+                        <td>RF01 até RF10</td>
+                    </tr>
+                    <tr>
+                        <td>Requisitos Não Funcionais</td>
+                        <td>4</td>
+                        <td>RNF01 até RNF04</td>
+                    </tr>
+                    <tr>
+                        <td>Histórias de Usuário</td>
+                        <td>25</td>
+                        <td>US-001 até US-025</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <strong>HERA</strong> — Hospedagem • Estadias • Reservas • Acomodações<br>
+    Estruturação e organização dos requisitos do sistema
+</footer>
+
+</body>
+</html>
